@@ -12,3 +12,15 @@ schoolBell.on("Broken",()=>{
 })
 
 schoolBell.emit("Broken")
+
+
+class StudentName extends EventEmitter{}
+
+const studentName = new StudentName()
+
+studentName.on("Call",(sName)=>{
+console.log(`Hello ${sName}, Welcome to our school`)
+})
+
+
+studentName.emit("Call","Chan")
