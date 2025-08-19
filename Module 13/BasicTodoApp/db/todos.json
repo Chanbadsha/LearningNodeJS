@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "title": "Finish Node.js homework",
+    "completed": false,
+    "priority": "high",
+    "dueDate": "2025-08-25"
+  },
+  {
+    "id": 2,
+    "title": "Buy groceries",
+    "completed": true,
+    "priority": "medium",
+    "dueDate": "2025-08-22"
+  },
+  {
+    "id": 3,
+    "title": "Clean the room",
+    "completed": false,
+    "priority": "low",
+    "dueDate": "2025-08-23"
+  },
+  {
+    "id": 4,
+    "title": "Prepare for presentation",
+    "completed": false,
+    "priority": "high",
+    "dueDate": "2025-08-30"
+  },
+  {
+    "id": 5,
+    "title": "Call Sean Hamilton",
+    "completed": true,
+    "priority": "medium",
+    "dueDate": "2025-08-20"
+  },
+  {
+    "id": 6,
+    "title": "Write blog post about MongoDB",
+    "completed": false,
+    "priority": "high",
+    "dueDate": "2025-08-27"
+  },
+  {
+    "id": 7,
+    "title": "Go for evening walk",
+    "completed": true,
+    "priority": "low",
+    "dueDate": "2025-08-21"
+  }
+]
