@@ -1,2 +1,3 @@
-Hello, my name is Chan Badsha
- Node.js is awesome!
+Writing with fs.promises!is badsha
+ This is append text
+Appending with fs.promises!
