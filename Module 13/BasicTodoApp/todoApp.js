@@ -38,6 +38,31 @@ const server = http.createServer((req, res) => {
 
   // Update a single todo
   else if (pathName === "/todos/update-todo" && req.method === "PATCH") {
+    const id = url.searchParams.get("id");
+
+    let updateData = "";
+    req.on("data", (chunk) => {
+      updateData = updateData + chunk;
+    });
+
+    req.on("end", () => {
+      // console.log(updateData);
+      const body = JSON.parse(updateData);
+      // console.log(body);
+      const todos = fs.readFileSync(filePath, { encoding: "utf-8" });
+      const parsedTodos = JSON.parse(todos);
+      let updateTodo = parsedTodos.findIndex(
+        (todo) => todo.id === JSON.parse(id)
+      );
+
+      parsedTodos[updateTodo] = {
+        ...parsedTodos[updateTodo],
+        ...body,
+      };
+      const updateTodos = JSON.stringify(parsedTodos, null, 2);
+      fs.writeFileSync(filePath, updateTodos);
+    });
+
     res.end("Todo update Succesfully");
   }
   // Delete a single todo
@@ -57,8 +82,8 @@ const server = http.createServer((req, res) => {
     const todos = fs.readFileSync(filePath, { encoding: "utf-8" });
     const parsedTodos = JSON.parse(todos);
     // console.log(parsedTodos);
-    const todo = parsedTodos.find((todo) => todo.id === 5);
-    console.log(JSON.stringify(todo));
+    const todo = parsedTodos.find((todo) => todo.id === JSON.parse(id));
+    // console.log(JSON.stringify(todo));
 
     res.writeHead(201, { "Content-Type": "application/json" });
     res.end(JSON.stringify(todo));
