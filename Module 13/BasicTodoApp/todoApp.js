@@ -29,9 +29,6 @@ const server = http.createServer((req, res) => {
       });
     });
 
-    // const todo = req.body;
-    // console.log(todo);
-
     res.end("Todo created Succesfully");
   } else if (req.url === "/todos/update-todo" && req.method === "PATCH") {
     res.end("Todo update Succesfully");
